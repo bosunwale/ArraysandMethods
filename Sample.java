@@ -19,7 +19,7 @@ public class Sample {
         decryptMessage = input.next();
         System.out.println("Enter key to shift to decrypt message");
         decrpytkey = input.nextInt();
-        System.out.println("Encrypted message is: " + CeaserCipherDecrypt(decryptMessage, decrpytkey));
+        System.out.println("Encrypted message is: " + CeaserCipherEncrypt(decryptMessage, decrpytkey));
 
         System.out.println("Enter the size of number you want");
         arraySize = input.nextInt();
@@ -82,20 +82,5 @@ public class Sample {
             textCipher.append(replaceValue);
         }
         return textCipher.toString();
-    }
-
-    public static String CeaserCipherDecrypt(String decryptText, int shiftValue){
-        decryptText = decryptText.toLowerCase();
-        StringBuilder message = new StringBuilder();
-        for(int i = 0; i < decryptText.length(); i++){
-            int characterPosition = alphabets.indexOf(decryptText.charAt(i));
-            int keyValue = (shiftValue + characterPosition) % 26;
-            if (keyValue < 0){
-                keyValue = alphabets.length() + keyValue;
-            }
-            char replaceValue = alphabets.charAt(keyValue);
-            message.append(replaceValue);
-        }
-        return message.toString();
     }
 }
