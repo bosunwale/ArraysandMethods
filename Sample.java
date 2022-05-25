@@ -55,7 +55,7 @@ public class Sample {
             System.out.println(reverseResult);
         }
     }
-    public static boolean SearchArray(int[]arrayElements, int arrayCheckValue){
+    public static void SearchArray(int[]arrayElements, int arrayCheckValue){
         boolean check = false;
         for(int elements : arrayElements){
             if (elements == arrayCheckValue) {
@@ -68,7 +68,6 @@ public class Sample {
         }else{
             System.out.printf("No, %d does not exist in the array", arrayCheckValue);
         }
-        return check;
     }
 
     public static String CeaserCipherEncrypt(String text, int shiftValue){
